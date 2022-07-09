@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "covtest": "npx hardhat coverage"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
   "homepage": "https://github.com/ytskvts/auction#readme",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.1",
-    "hardhat": "^2.10.0"
+    "hardhat": "^2.10.0",
+    "solidity-coverage": "^0.7.21"
+  },
+  "dependencies": {
+    "chai": "^4.3.6"
   }
 }

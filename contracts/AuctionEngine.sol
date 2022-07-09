@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 contract AuctionEngine {
     address public engineOwner;
     uint constant defaultDuration = 2 days;
-    uint constant fee = 10; //10% fee for engineOwner
+    uint constant public fee = 10; //10% fee for engineOwner
 
     struct Auction {
         address payable seller;
@@ -57,7 +57,7 @@ contract AuctionEngine {
     }
 
     function buy(uint index) external payable {
-        Auction memory currentAuction = auctions[index];
+        Auction storage currentAuction = auctions[index];
         require(!currentAuction.stopped, "auction stopped");
         require(block.timestamp < currentAuction.endsAt, "auction ended");
         uint currentPrice = getPriceFor(index);
@@ -69,7 +69,7 @@ contract AuctionEngine {
             payable(msg.sender).transfer(refund);
         }
         currentAuction.seller.transfer(
-            currentPrice * ((100 - fee) / 100)
+            currentPrice - ((currentPrice * fee) / 100)
         );
         emit AuctionEnded(index, currentPrice, msg.sender);
     }
