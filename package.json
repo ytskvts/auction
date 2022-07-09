@@ -1,0 +1,29 @@
+{
+  "name": "auction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "covtest": "npx hardhat coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ytskvts/auction.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ytskvts/auction/issues"
+  },
+  "homepage": "https://github.com/ytskvts/auction#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.1",
+    "hardhat": "^2.10.0",
+    "solidity-coverage": "^0.7.21"
+  },
+  "dependencies": {
+    "chai": "^4.3.6"
+  }
+}
